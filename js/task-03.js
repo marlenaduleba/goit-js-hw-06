@@ -13,15 +13,7 @@ const images = [
   },
 ];
 
-images.forEach((image) => {
-  image.style = "max-width: 100%; min-height: 100%;";
-});
-
 const gallery = document.querySelector(".gallery");
-
-gallery.style.display = "flex";
-gallery.style.gap = "15px";
-gallery.style.listStyle = "none";
 
 const imagesListItems = images
   .map(
