@@ -8,16 +8,17 @@ const destroyBtn = document.querySelector("[data-destroy]");
 const boxes = document.querySelector("#boxes");
 const { min } = input;
 
-function createBoxes(amount) {
-  let n = 0;
+let baseSize = 30;
+const reset = 30;
 
+function createBoxes(amount) {
   for (let i = min; i <= amount; i++) {
-    n += 10;
     const newBox = document.createElement("div");
     newBox.id = "new-box";
     newBox.style.background = getRandomHexColor();
-    newBox.style.width = 20 + n + "px";
-    newBox.style.height = 20 + n + "px";
+    newBox.style.width = `${baseSize}px`;
+    newBox.style.height = `${baseSize}px`;
+    baseSize += 10;
     boxes.append(newBox);
   }
   return boxes;
@@ -36,4 +37,5 @@ createBtn.addEventListener("click", () => {
 
 destroyBtn.addEventListener("click", () => {
   destroyBoxex(input.value);
+  baseSize = reset;
 });
