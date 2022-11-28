@@ -9,7 +9,7 @@ const boxes = document.querySelector("#boxes");
 const { min } = input;
 
 let baseSize = 30;
-const reset = 30;
+const resetSize = 30;
 
 function createBoxes(amount) {
   for (let i = min; i <= amount; i++) {
@@ -37,5 +37,5 @@ createBtn.addEventListener("click", () => {
 
 destroyBtn.addEventListener("click", () => {
   destroyBoxex(input.value);
-  baseSize = reset;
+  baseSize = resetSize;
 });
